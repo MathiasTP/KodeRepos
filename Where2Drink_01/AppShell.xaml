@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       mc:Ignorable="d"
+       xmlns:local="clr-namespace:Where2Drink_01.Views"
+       xmlns:local2="clr-namespace:Where2Drink_01.Views.BarViews"
+       Title="Where2Drink_01"
+       x:Class="Where2Drink_01.AppShell">
+
+    <!-- 
+        Styles and Resources 
+    -->
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Color x:Key="NavigationPrimary">Black</Color>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="Lavender" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <!-- Your Pages -->
+    
+    <TabBar>
+        <Tab Title="Nærheden" Icon="tab_feed.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MapPage}" />
+        </Tab>
+        <Tab Title="Kort" Icon="tab_about.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MapPage}"
+                          Route="MapPage"/>
+        </Tab>
+        <Tab Title="Tilbud" Icon="tab_about.png">
+            <ShellContent ContentTemplate="{DataTemplate local2:AbarPage}" />
+        </Tab>
+        <Tab Title="Events" Icon="tab_about.png">
+            <ShellContent ContentTemplate="{DataTemplate local2:HeidisPage}" />
+        </Tab>
+        <Tab Title="Mere" Icon="tab_about.png">
+            <ShellContent ContentTemplate="{DataTemplate local2:GuldhornPage}" />
+        </Tab>
+    </TabBar>
+
+</Shell>

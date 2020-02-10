@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "733817685387",
+    "firebase_url": "https://where2drink.firebaseio.com",
+    "project_id": "where2drink",
+    "storage_bucket": "where2drink.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733817685387:android:f5c55f1d97829f9de75b8e",
+        "android_client_info": {
+          "package_name": "com.companyname.where2drink_01"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "733817685387-vn2317l64s847slm8ghum1f8kjjmi9jo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.companyname.where2drink_01",
+            "certificate_hash": "1678048cdc4aa345c059cc4c2796b04b67daa712"
+          }
+        },
+        {
+          "client_id": "733817685387-pbb8l34a07n56gc41nhv18u9mvnlf303.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgrciVOkgEvJPdfsPk4O4_RgNu5uq_VMY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "733817685387-pbb8l34a07n56gc41nhv18u9mvnlf303.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             
+             x:Class="Where2Drink_01.Views.LoginPage"
+             BackgroundImageSource="Grad2Back"
+             Title="LoginPage"
+             Shell.NavBarIsVisible="False"
+             
+             >
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0,0,0,0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <Grid
+        RowSpacing="0"
+        ColumnSpacing="0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Image
+            Grid.Row="0"
+            Source="Logo_rundt"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            HeightRequest="100"
+            WidthRequest="100" />
+
+        <StackLayout
+            Grid.Row="2"
+            HorizontalOptions="Center"
+            VerticalOptions="FillAndExpand"
+            Spacing="10"
+            >
+        <Label
+            Grid.Row="2"
+            Text="Din bytur er kun et klik væk"
+            TextColor="DarkRed"
+            HorizontalOptions="Center"
+            FontSize="30"
+            
+            FontFamily="Lobster-Regular"
+        />
+        <Image
+            Source="ArrowDown"
+            HeightRequest="100"
+            />
+        </StackLayout>
+
+        <StackLayout                
+            Grid.Row="3"
+            VerticalOptions="Fill"
+            HorizontalOptions="Center"
+            Spacing="15">
+
+            <StackLayout HorizontalOptions="Center" Spacing="10">
+                <Button Text="Login med Facebook"
+                        
+                        Command="{Binding OnLoginWithFacebookCommand}"
+                        TextColor="White"
+                        CornerRadius="20"
+                        WidthRequest="330"
+                        BackgroundColor="#4267B2"
+                        HorizontalOptions="Center"
+                        VerticalOptions="FillAndExpand" 
+                        FontSize="15"
+                        FontAttributes="Bold"
+                />
+                <Button Text="Login med Google"
+                        Command="{Binding OnLoginWithGoogle}"
+                        TextColor="White"
+                        CornerRadius="20"
+                        WidthRequest="330"
+                        BackgroundColor="#4285F4"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand" 
+                        FontSize="15"
+                        FontAttributes="Bold"
+                />
+                
+                <Label
+                    Text="Har du ikke lyst til at logge ind?"
+                    TextColor="White"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Fill"
+                />
+                <Button Text="Fortsæt uden login"
+                        WidthRequest="330"
+                        Command="{Binding WithoutLogin}"
+                        CornerRadius="20"
+                        TextColor="White"
+                        BackgroundColor="Black"
+                        FontSize="15"
+                        Opacity="0.8"
+                        HorizontalOptions="Center"
+                        FontAttributes="Bold"
+                        VerticalOptions="Fill"/>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:expandable="clr-namespace:Expandable;assembly=ExpandableView"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             mc:Ignorable="d"
+             x:Class="Where2Drink_01.Views.BarViews.HeidisPage" 
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#f9f6f7">
+    <StackLayout >
+        <Grid x:Name="Griddet" MinimumHeightRequest="40" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="180"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <Image Source="heidisbierbar" Grid.Row="0" Grid.RowSpan="2" HorizontalOptions="Fill"  Aspect="Fill"  VerticalOptions="Center" x:Name="BigPicture"  />
+            <Label Text="Heidi's Bier Bar" FontFamily="RobotoSlab-Medium.ttf#RobotoSlab-Medium" TextColor="White"  Grid.Row="0" FontAttributes="Bold" VerticalOptions="Start" HorizontalOptions="Center" />
+            <Frame HeightRequest="60" Margin="5,0,0,5" CornerRadius="10" WidthRequest="60" VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand" Grid.RowSpan="2" Padding="5" >
+                <Image Source="heidislogo.png" HeightRequest="80" WidthRequest="80" Grid.RowSpan="2" VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand" Aspect="AspectFill"    />
+            </Frame>
+
+        </Grid>
+        <ScrollView Scrolled="ScrollView_Scrolled" x:Name="ScrollViewet" >
+            <StackLayout VerticalOptions="Fill" HorizontalOptions="Fill">
+                <StackLayout Padding="5">
+                    <Frame CornerRadius="10" HasShadow="True" BackgroundColor="White">
+                        <expandable:ExpandableView x:Name="expandableView" 
+                                   BackgroundColor="White"
+                                   ExpandAnimationLength="100">
+
+
+                            <expandable:ExpandableView.PrimaryView>
+                                <StackLayout Orientation="Horizontal" Padding="5">
+                                    <Image Source="abouticon.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="Start"/>
+                                    <Label Text="Beskrivelse" FontSize="20" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="Center" FontFamily="RobotoSlab-Medium.ttf#RobotoSlab-Medium" />
+                                    <Image Source="expandarrow.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="EndAndExpand"/>
+                                </StackLayout>
+                            </expandable:ExpandableView.PrimaryView>
+
+
+                            <expandable:ExpandableView.SecondaryViewTemplate>
+                                <DataTemplate x:Name="Dataen">
+                                    <StackLayout Padding="5">
+                                        <Label Text="På Heidi's Bier Bar kan du opleve ægte afterskistemning med store fadøl fra deres mange forskellige ølhaner, dans på bordene og dyste ved sømblokkene. Den helt rigtige afterskistemning er du garanteret med et 4-liters øltårn, afterskidrinks, jägerbombs eller en af deres over 30 forskellige flaskeøl. Værtinderne står skarpt i flotte tyrolerkjoler skænker dig alt, hvad dit tørstige afterskihjerte kan begære! Så tag afsted til afterskifest hele året til lyden af tyske, danske og internationale hits, der får hofterne til at vugge og øllet til at skumme.
+                                                        Aldersgrænse min. 20 år alle dage." x:Name="AboutLabel" FontSize="Medium"/>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </expandable:ExpandableView.SecondaryViewTemplate>
+                        </expandable:ExpandableView>
+                    </Frame>
+
+                    <Frame CornerRadius="10" BackgroundColor="White">
+                        <expandable:ExpandableView x:Name="expandableView2" 
+                                   BackgroundColor="White"
+                                   ExpandAnimationLength="100">
+                            <expandable:ExpandableView.PrimaryView>
+                                <StackLayout Orientation="Horizontal" Padding="5">
+                                    <Image Source="clockicon" WidthRequest="20" HeightRequest="20" VerticalOptions="Center" HorizontalOptions="Start" />
+                                    <Label Text="Åbningstider" FontSize="20" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="Center" FontFamily="RobotoSlab-Medium.ttf#RobotoSlab-Medium" />
+                                    <Image x:Name="arrow2" Source="expandarrow.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="EndAndExpand"/>
+                                </StackLayout>
+                            </expandable:ExpandableView.PrimaryView>
+
+
+                            <expandable:ExpandableView.SecondaryViewTemplate>
+                                <DataTemplate >
+                                    <StackLayout Padding="0" Orientation="Horizontal">
+                                        <Grid Margin="2,0,5,5">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="100"/>
+                                                <ColumnDefinition Width="300"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="30"/>
+                                                <RowDefinition Height="30"/>
+                                                <RowDefinition Height="30"/>
+                                                <RowDefinition Height="30"/>
+                                                <RowDefinition Height="30"/>
+                                                <RowDefinition Height="30"/>
+                                                <RowDefinition Height="30"/>
+                                            </Grid.RowDefinitions>
+                                            <Label Text="Mandag" FontSize="Medium" Grid.Row="0"/>
+                                            <Label Text="Tirsdag" FontSize="Medium" Grid.Row="1"/>
+                                            <Label Text="Onsdag" FontSize="Medium" Grid.Row="2"/>
+                                            <Label Text="Torsdag" FontSize="Medium" Grid.Row="3"/>
+                                            <Label Text="Fredag" FontSize="Medium" Grid.Row="4"/>
+                                            <Label Text="Lørdag" FontSize="Medium" Grid.Row="5"/>
+                                            <Label Text="Søndag" FontSize="Medium" Grid.Row="6"/>
+
+                                            <Label Text="Lukket" FontSize="Medium" Grid.Row="0" Grid.Column="1"/>
+                                            <Label Text="Lukket" FontSize="Medium" Grid.Row="1" Grid.Column="1"/>
+                                            <Label Text="Lukket" FontSize="Medium" Grid.Row="2" Grid.Column="1"/>
+                                            <Label Text="20:00 - 05:00" FontSize="Medium" Grid.Row="3" Grid.Column="1"/>
+                                            <Label Text="20:00 - 05:00" FontSize="Medium" Grid.Row="4" Grid.Column="1"/>
+                                            <Label Text="20:00 - 05:00" FontSize="Medium" Grid.Row="5" Grid.Column="1"/>
+                                            <Label Text="Lukket" FontSize="Medium" Grid.Row="6" Grid.Column="1"/>
+                                        </Grid>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </expandable:ExpandableView.SecondaryViewTemplate>
+
+
+
+                        </expandable:ExpandableView>
+                    </Frame>
+
+                    <Frame CornerRadius="10" BackgroundColor="White">
+                        <expandable:ExpandableView x:Name="expandableView3" 
+                                       BackgroundColor="White"
+                                       ExpandAnimationLength="100"
+                                       >
+                            <expandable:ExpandableView.PrimaryView>
+                                <StackLayout Orientation="Horizontal" Padding="5">
+                                    <Image Source="cocktailicon" WidthRequest="20" HeightRequest="20" VerticalOptions="Center" HorizontalOptions="Start" />
+                                    <Label Text="Menukort" FontSize="20" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="Center" FontFamily="RobotoSlab-Medium.ttf#RobotoSlab-Medium"/>
+                                    <Image Source="expandarrow.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="EndAndExpand"/>
+                                </StackLayout>
+                            </expandable:ExpandableView.PrimaryView>
+
+
+
+                            <expandable:ExpandableView.SecondaryViewTemplate>
+                                <DataTemplate>
+                                    <StackLayout Padding="1" >
+                                        <Grid RowSpacing="5">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="35"/>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="35"/>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="35"/>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="35"/>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="35"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Label Text="Hver dag før midnat" Grid.Column="0" Grid.Row="0" FontSize="Medium" TextColor="Black" HorizontalOptions="Start" VerticalOptions="End" />
+                                            <StackLayout Grid.Row="1" Grid.Column="0" Spacing="1">
+                                                <Grid RowSpacing="5" ColumnSpacing="50" >
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="9"/>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="200"/>
+                                                        <ColumnDefinition Width="200"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Text="Gin Hass" FontSize="Small" TextColor="Black" HorizontalOptions="Start" FontAttributes="Bold"  Grid.Row="0" Grid.Column="0" VerticalOptions="Start"  />
+                                                    <Label Text="Husets sjus" FontSize="Small" TextColor="Black" HorizontalOptions="Start"  FontAttributes="Bold"  Grid.Row="1" Grid.Column="0"/>
+                                                    <Label Text="Husets flaske" FontSize="Small" TextColor="Black" HorizontalOptions="Start" FontAttributes="Bold"  Grid.Row="2" Grid.Column="0" />
+                                                    <Label Text="Cider" FontSize="Small" TextColor="Black" HorizontalOptions="Start" FontAttributes="Bold"  Grid.Row="3" />
+                                                    <Label Text="10 husets shots" FontSize="Small" TextColor="Black" HorizontalOptions="Start" FontAttributes="Bold"  Grid.Row="4" />
+                                                    <Label Text="Jägerbomb." FontSize="Small" TextColor="Black" HorizontalOptions="Start" FontAttributes="Bold"  Grid.Row="5" />
+
+                                                    <Label Text="45,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="20" Grid.Row="0" Grid.Column="1" />
+                                                    <Label Text="35,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="20" Grid.Row="1" Grid.Column="1" />
+                                                    <Label Text="399,-" FontSize="Small" VerticalOptions="End" HorizontalOptions="Start" HeightRequest="20" Grid.Row="2" Grid.Column="1" />
+                                                    <Label Text="35,-" FontSize="Small" VerticalOptions="End" HorizontalOptions="Start" HeightRequest="20" Grid.Row="3" Grid.Column="1" />
+                                                    <Label Text="129,-" FontSize="Small" VerticalOptions="End" HorizontalOptions="Start" HeightRequest="20" Grid.Row="4" Grid.Column="1"/>
+                                                    <Label Text="10,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="20" Grid.Row="5" Grid.Column="1" />
+                                                </Grid>
+
+
+                                                <Label Text="Øl/Cider" Grid.Column="0" Grid.Row="2" FontSize="Medium" TextColor="Black" HorizontalOptions="Start" VerticalOptions="End" />
+                                                <StackLayout Grid.Row="3" Grid.Column="0" Spacing="1">
+                                                    <Grid RowSpacing="5" ColumnSpacing="50" >
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="9"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="9"/>
+                                                            <RowDefinition Height="*"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="200"/>
+                                                            <ColumnDefinition Width="200"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Label Text="Månedens øl flaske / fadøl" FontSize="Small" TextColor="Black" HorizontalOptions="Start" FontAttributes="Bold"  Grid.Row="0" Grid.Column="0" VerticalOptions="Start"  />
+                                                        <Label Text="Spørg personalet om månedens øl" FontSize="8" TextColor="Black" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2"  VerticalTextAlignment="Start" HorizontalTextAlignment="Start"   />
+                                                        <Label Text="Diverse flaskeøl" FontSize="Small" TextColor="Black" HorizontalOptions="Start"  FontAttributes="Bold"  Grid.Row="2" Grid.Column="0"/>
+                                                        <Label Text="Diverse specialøl" FontSize="Small" TextColor="Black" HorizontalOptions="Start" FontAttributes="Bold"  Grid.Row="3" Grid.Column="0" />
+                                                        <Label Text="1-liters fadøl" FontSize="Small" TextColor="Black" HorizontalOptions="Start" FontAttributes="Bold"  Grid.Row="4" />
+                                                        <Label Text="4-liters øltårn" FontSize="Small" TextColor="Black" HorizontalOptions="Start" FontAttributes="Bold"  Grid.Row="5" />
+                                                        <Label Text="Cider 1 stk. / 3 st." FontSize="Small" TextColor="Black" HorizontalOptions="Start" FontAttributes="Bold"  Grid.Row="6" />
+                                                        <Label Text="Breezer, Mokaï, Smirnoff Ice" FontSize="8" TextColor="Black" Grid.Row="7" Grid.Column="0" Grid.RowSpan="2"  VerticalTextAlignment="Start" HorizontalTextAlignment="Start"   />
+                                                        <Label Text="Sommersby Cider" FontSize="Small" TextColor="Black" HorizontalOptions="Start" FontAttributes="Bold"  Grid.Row="8" />
+
+                                                        <Label Text="25,- / 35" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="20" Grid.Row="0" Grid.Column="1" />
+                                                        <Label Text="45,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="20" Grid.Row="2" Grid.Column="1" />
+                                                        <Label Text="55,-" FontSize="Small" VerticalOptions="End" HorizontalOptions="Start" HeightRequest="20" Grid.Row="3" Grid.Column="1" />
+                                                        <Label Text="99,-" FontSize="Small" VerticalOptions="End" HorizontalOptions="Start" HeightRequest="20" Grid.Row="4" Grid.Column="1" />
+                                                        <Label Text="399,-" FontSize="Small" VerticalOptions="End" HorizontalOptions="Start" HeightRequest="20" Grid.Row="5" Grid.Column="1"/>
+                                                        <Label Text="55,- / 149,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="20" Grid.Row="6" Grid.Column="1" />
+                                                        <Label Text="65,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="20" Grid.Row="8" Grid.Column="1" />
+                                                    </Grid>
+
+
+                                                </StackLayout>
+
+
+                                                <Label Text="Drinks" Grid.Column="0" Grid.Row="4" FontSize="Medium" TextColor="Black" Margin="0,40,0,0" />
+                                                <StackLayout Grid.Row="5" Grid.Column="0" Spacing="1">
+                                                    <Grid RowSpacing="5" ColumnSpacing="50" >
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="200"/>
+                                                            <ColumnDefinition Width="200"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Label Text="White Russian 1 stk. / 2 stk." FontSize="Small" TextColor="Black" HorizontalOptions="StartAndExpand" FontAttributes="Bold" HeightRequest="20" Grid.Row="0" />
+                                                        <Label Text="Strawberry Daiquiri 1 stk. / 2 stk." FontSize="Small" TextColor="Black" HorizontalOptions="StartAndExpand" FontAttributes="Bold" HeightRequest="20" Grid.Row="1"/>
+                                                        <Label Text="Gin Hass 1 stk. / 2 stk." FontSize="Small" TextColor="Black" HorizontalOptions="Start" FontAttributes="Bold" HeightRequest="20" Grid.Row="2"/>
+                                                        <Label Text="Pina Colada 1 stk. / 2 stk." FontSize="Small" TextColor="Black" HorizontalOptions="Start"  FontAttributes="Bold" HeightRequest="20" Grid.Row="3"/>
+                                                        <Label Text="Gingerbee 1 stk. / 2 stk." FontSize="Small" TextColor="Black" HorizontalOptions="Start" FontAttributes="Bold" HeightRequest="20" Grid.Row="4"/>
+                                                        <Label Text="Long Island Iced Tea" FontSize="Small" TextColor="Black" HorizontalOptions="Start" FontAttributes="Bold" HeightRequest="20" Grid.Row="5"/>
+                                                        <Label Text="Heidi's Hammer" FontSize="Small" TextColor="Black" HorizontalOptions="Start"  FontAttributes="Bold" HeightRequest="20" Grid.Row="6"/>
+
+                                                        <Label Text="70,- / 129,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="0" Grid.Column="1" />
+                                                        <Label Text="70,- / 129,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="1" Grid.Column="1" />
+                                                        <Label Text="70,- / 129,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="2" Grid.Column="1" />
+                                                        <Label Text="70,- / 129,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="3" Grid.Column="1" />
+                                                        <Label Text="70,- / 129,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="4" Grid.Column="1" />
+                                                        <Label Text="120,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="5" Grid.Column="1"/>
+                                                        <Label Text="120,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="6" Grid.Column="1"/>
+                                                    </Grid>
+                                                </StackLayout>
+
+
+                                                <Label Text="Shots" Grid.Column="0" Grid.Row="6" FontSize="Medium" TextColor="Black" HorizontalOptions="StartAndExpand" VerticalOptions="End" Margin="0,40,0,0" />
+                                                <StackLayout Grid.Row="7" Grid.Column="0" Spacing="1">
+                                                    <Grid RowSpacing="5" ColumnSpacing="50" >
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="9"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="9"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="9"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="200"/>
+                                                            <ColumnDefinition Width="200"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Label Text="Husets shots" FontSize="Small" TextColor="Black" HorizontalOptions="StartAndExpand" FontAttributes="Bold"  Grid.Row="0"/>
+                                                        <Label Text="Små, Jägermeister, Råstoff, Fireball" FontSize="8" TextColor="Black" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2"  VerticalTextAlignment="Start" HorizontalTextAlignment="Start"   />
+                                                        <Label Text="Luksus shots" FontSize="Small" TextColor="Black" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Grid.Row="2" />
+                                                        <Label Text="Fernet, Tequila, Bailey's, Sambuca" FontSize="8" TextColor="Black" Grid.Row="3" Grid.Column="0" Grid.RowSpan="2"  VerticalTextAlignment="Start" HorizontalTextAlignment="Start"   />
+                                                        <Label Text="Feigling, Flügel 1 stk. / 4 ens" FontSize="Small" TextColor="Black" HorizontalOptions="Start"  FontAttributes="Bold" Grid.Row="4"/>
+                                                        <Label Text="10 ens shakede shots" FontSize="Small" TextColor="Black" HorizontalOptions="Start" FontAttributes="Bold" Grid.Row="5"/>
+                                                        <Label Text="Kinderæg, Æblekage, Jordbærshots" FontSize="8" TextColor="Black" Grid.Row="6" Grid.Column="0" Grid.RowSpan="2"  VerticalTextAlignment="Start" HorizontalTextAlignment="Start"   />
+                                                        <Label Text="Jägerbomb, 1 stk. / 10 stk." FontSize="Small" TextColor="Black" HorizontalOptions="Start" FontAttributes="Bold" Grid.Row="7"/>
+                                                        <Label Text="Mega bomb" FontSize="Small" TextColor="Black" HorizontalOptions="Start" FontAttributes="Bold" Grid.Row="8"/>
+
+                                                        <Label Text="25,- / 195,- / 350,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="0" Grid.Column="1"/>
+                                                        <Label Text="35,- / 650,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="2" Grid.Column="1"/>
+                                                        <Label Text="35,- / 99,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="4" Grid.Column="1"/>
+                                                        <Label Text="195,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="5" Grid.Column="1"/>
+                                                        <Label Text="25,- / 200,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="7" Grid.Column="1"/>
+                                                        <Label Text="125,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="8" Grid.Column="1"/>
+                                                    </Grid>
+                                                </StackLayout>
+
+                                                <Label Text="Spiritus / bobler" Grid.Column="0" Grid.Row="8" FontSize="Medium" TextColor="Black" HorizontalOptions="StartAndExpand" VerticalOptions="End" Margin="0,40,0,0" />
+                                                <StackLayout Grid.Row="9" Grid.Column="0" Spacing="1">
+                                                    <Grid RowSpacing="5" ColumnSpacing="50" >
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="20"/>
+
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="200"/>
+                                                            <ColumnDefinition Width="200"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Label Text="Husets sjus" FontSize="Small" TextColor="Black" HorizontalOptions="StartAndExpand" FontAttributes="Bold" HeightRequest="20" Grid.Row="0" />
+                                                        <Label Text="Dobbel husets sjus" FontSize="Small" TextColor="Black" HorizontalOptions="StartAndExpand" FontAttributes="Bold" HeightRequest="20" Grid.Row="1" />
+                                                        <Label Text="Luksus sjus" FontSize="Small" TextColor="Black" HorizontalOptions="StartAndExpand" FontAttributes="Bold" HeightRequest="20" Grid.Row="2" />
+                                                        <Label Text="Dobbelt luksus sjus" FontSize="Small" TextColor="Black" HorizontalOptions="StartAndExpand" FontAttributes="Bold" HeightRequest="20" Grid.Row="3" />
+                                                        <Label Text="Husets flaske" FontSize="Small" TextColor="Black" HorizontalOptions="StartAndExpand" FontAttributes="Bold" HeightRequest="20" Grid.Row="4" />
+                                                        <Label Text="Luksus flaske" FontSize="Small" TextColor="Black" HorizontalOptions="StartAndExpand" FontAttributes="Bold" HeightRequest="20" Grid.Row="5"  />
+                                                        <Label Text="Cîroc 0,7L" FontSize="Small" TextColor="Black" HorizontalOptions="StartAndExpand" FontAttributes="Bold" HeightRequest="20" Grid.Row="6"  />
+                                                        <Label Text="Cîroc 1,75L" FontSize="Small" TextColor="Black" HorizontalOptions="StartAndExpand" FontAttributes="Bold" HeightRequest="20" Grid.Row="7"  />
+                                                        <Label Text="Moët / Chandon" FontSize="Small" TextColor="Black" HorizontalOptions="StartAndExpand" FontAttributes="Bold" HeightRequest="20" Grid.Row="8"  />
+                                                        <Label Text="Moët / Chandon Magnum" FontSize="Small" TextColor="Black" HorizontalOptions="StartAndExpand" FontAttributes="Bold" HeightRequest="20" Grid.Row="9"  />
+
+
+                                                        <Label Text="50,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="20" Grid.Row="0" Grid.Column="1"/>
+                                                        <Label Text="70,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="20" Grid.Row="1" Grid.Column="1"/>
+                                                        <Label Text="60,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="20" Grid.Row="2" Grid.Column="1"/>
+                                                        <Label Text="85,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="20" Grid.Row="3" Grid.Column="1"/>
+                                                        <Label Text="550,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="20" Grid.Row="4" Grid.Column="1"/>
+                                                        <Label Text="650,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="20" Grid.Row="5" Grid.Column="1"/>
+                                                        <Label Text="799,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="20" Grid.Row="6" Grid.Column="1"/>
+                                                        <Label Text="1.799,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="20" Grid.Row="7" Grid.Column="1"/>
+                                                        <Label Text="749,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="20" Grid.Row="8" Grid.Column="1"/>
+                                                        <Label Text="1.799,-" FontSize="Small" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="20" Grid.Row="9" Grid.Column="1"/>
+                                                    </Grid>
+                                                </StackLayout>
+                                            </StackLayout>
+
+
+                                        </Grid>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </expandable:ExpandableView.SecondaryViewTemplate>
+                        </expandable:ExpandableView>
+                    </Frame>
+
+                    <Frame CornerRadius="10" BackgroundColor="White">
+                        <expandable:ExpandableView x:Name="expandableView4" 
+                                       BackgroundColor="White"
+                                       ExpandAnimationLength="100"
+                                               IsExpanded="True">
+                            <expandable:ExpandableView.PrimaryView>
+                                <StackLayout Orientation="Horizontal" Padding="5">
+                                    <Image Source="addressicon" WidthRequest="20" HeightRequest="20" VerticalOptions="Center" HorizontalOptions="Start" />
+                                    <Label Text="Lokation" FontSize="20" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="Center" FontFamily="RobotoSlab-Medium.ttf#RobotoSlab-Medium" />
+                                    <Image Source="expandarrow.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="EndAndExpand"/>
+                                </StackLayout>
+                            </expandable:ExpandableView.PrimaryView>
+
+
+                            <expandable:ExpandableView.SecondaryViewTemplate>
+                                <DataTemplate >
+                                    <StackLayout Padding="2">
+                                        <maps:Map IsShowingUser="True" x:Name="Mappet" HeightRequest="220">
+                                            <x:Arguments>
+                                                <maps:MapSpan>
+                                                    <x:Arguments>
+                                                        <maps:Position>
+                                                            <x:Arguments>
+                                                                <x:Double>56.158966</x:Double>
+                                                                <x:Double>10.206375</x:Double>
+                                                            </x:Arguments>
+                                                        </maps:Position>
+                                                        <x:Double>0.010</x:Double>
+                                                        <x:Double>0.010</x:Double>
+                                                    </x:Arguments>
+                                                </maps:MapSpan>
+                                            </x:Arguments>
+                                            <maps:Map.Pins>
+                                                <maps:Pin Label="Heidi's Bier Bar" Address="Klostergade 34B, St, 8000 Aarhus">
+                                                    <maps:Pin.Position>
+                                                        <maps:Position>
+                                                            <x:Arguments>
+                                                                <x:Double>56.158966</x:Double>
+                                                                <x:Double>10.206375</x:Double>
+                                                            </x:Arguments>
+                                                        </maps:Position>
+                                                    </maps:Pin.Position>
+                                                </maps:Pin>
+                                            </maps:Map.Pins>
+                                        </maps:Map>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </expandable:ExpandableView.SecondaryViewTemplate>
+
+                        </expandable:ExpandableView>
+                    </Frame>
+
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+
+
+</ContentPage>
